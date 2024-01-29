@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>APP MARVEL SPIDERSTHEFANY </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <style>
+        .card-body {
+            transition: transform 0.9s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+            background-size: cover; 
+            background-position: center; 
+            color: white; 
+            position: relative;
+        }
+        
+        .card-body::after {
+            content: '';
+            background-image: url('Imagen/fondo.jpg'); 
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0;
+            transition: opacity 0.9s, transform 0.9s;
+            z-index: -1;
+        }
+        
+        .card-body:hover {
+            transform: rotateX(360deg);
+        }
+        
+        .card-body:hover::after {
+            opacity: 1;
+        }
+
+       
+        .text-with-shadow {
+            position: relative; 
+            z-index: 2; 
+            text-shadow: 2px 2px 4px #000000;
+        }
+
+        .card-body::before {
+            content: "";
+            position: absolute;
+            top: 0; 
+            left: 0;
+            bottom: 0; 
+            right: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+            transition: opacity 0.6s;
+        }
+
+        .card-body:hover::before {
+            opacity: 0;
+        }
+    </style>
+</head>
+
+</head>
+<body>
+
+ <!-- CREACION DEL NAVBAR -->
+<nav class="navbar navbar-dark " style="background-color: #5e0303;">
+    <a href="" class="navbar-brand">Marvel App</a>
+    <div class="dropdown">
+        <button class="btn btn-dark dropdown-toggle" style="background-color: #000000;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          QUE NECESITAS
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">HEROES</a>
+          <a class="dropdown-item" href="#">COMICS</a>
+          <a class="dropdown-item" href="#">CONTACTO</a>
+        </div>
+      </div>
+</nav>
+  <!-- CREANDO NUESTRO CONTENIDO , TARJETAS DEL CONTENIDO QUE TENDRA NUESTRA PAGINA -->
+<div class="container">
+    <div class="card text-center">
+        <div class="card-header">
+          MARVEL SPIDERSTHEFANY
+        </div>
+        <div class="card-body" style="background-image: url('Imagen/heroes.jpg');">
+            <h5 class="card-title text-with-shadow">ESPECIAL DE HEROES</h5>
+            <p class="card-text text-with-shadow">DESCUBRE LAS ULTIMAS NOVEDADES DE LOS SUPER PODEROSOS HEROES DE MARVEL</p>
+            <a href="#" class="btn btn-dark text-with-shadow" style="background-color: #4b0202;">IR A HEROES</a>
+        </div>
+        
+        <hr>
+        <div class="card-body" style="background-image: url('Imagen/comics.jpg');">
+            <h5 class="card-title text-with-shadow">Especial de Comics</h5>
+            <p class="card-text text-with-shadow">DESCUBRE LOS MAS MITICOS COMICS DE MARVEL</p>
+            <a href="#" class="btn btn-dark text-with-shadow" style="background-color: #4b0202;">IR A COMICS</a>
+        </div>
+          <hr>
+          <div class="card-body" style="background-image: url('Imagen/contacto.jpg');">
+            <h5 class="card-title text-with-shadow">¿Que Necesitas? Contactanos</h5>
+            <p class="card-text text-with-shadow">ESTAS BUSCNADO UN NUEVO CONTENIDO, ESCRIBENOS Y TE LO SUBIMOS</p>
+            <a href="#" class="btn btn-dark text-with-shadow" style="background-color: #4b0202;">CONTACTANOS</a>
+        </div>
+        <div class="card-footer text-muted">
+         Lo ultimo de marvel a tu alcance
+        </div>
+      </div>
+</div>
+
+ <!-- CREAMOS EL PIE DE PAGINA QUE TENDRÁ TODA NUESTRA WEB -->
+<footer class="bg-body-tertiary text-center">
+   
+    <div class="container p-4 pb-0">
+      <section class="mb-4">
+        <a
+        data-mdb-ripple-init
+        class="btn text-white btn-floating m-1"
+        style="background-color: #3b5998; display: inline-flex; justify-content: center; align-items: center;"
+        href="#!"
+        role="button"
+        >
+        <i class="fab fa-facebook-f" style="width: auto;"></i>
+    </a>
+ 
+        <a
+          data-mdb-ripple-init
+          class="btn text-white btn-floating m-1"
+          style="background-color: #55acee; display: inline-flex; justify-content: center; align-items: center;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-twitter"style="width: auto;"></i
+        ></a>
+  
+        <a
+          data-mdb-ripple-init
+          class="btn text-white btn-floating m-1"
+          style="background-color: #dd4b39; display: inline-flex; justify-content: center; align-items: center;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-google" style="width: auto;"></i
+        ></a>
+  
+        <a
+          data-mdb-ripple-init
+          class="btn text-white btn-floating m-1"
+          style="background-color: #ac2bac; display: inline-flex; justify-content: center; align-items: center;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-instagram" style="width: auto;"></i
+        ></a>
+  
+        <a
+          data-mdb-ripple-init
+          class="btn text-white btn-floating m-1"
+          style="background-color: #0082ca; display: inline-flex; justify-content: center; align-items: center;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-linkedin-in" style="width: auto;"></i
+        ></a>
+      
+        <a
+          data-mdb-ripple-init
+          class="btn text-white btn-floating m-1"
+          style="background-color: #333333; display: inline-flex; justify-content: center; align-items: center;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-github" style="width: auto;"></i
+        ></a>
+      </section>
+   
+    </div>
+
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+      © 2024 Copyright:
+      <a class="text-body" href="">STHEFANY ACOSTA CANOURA</a>
+    </div>
+
+  </footer>
+
+    <script src=" "></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+</body>
+</html>
