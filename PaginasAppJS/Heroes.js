@@ -9,16 +9,19 @@ const marvel = {
             .then(respuesta => respuesta.json())
             .then((json) => {
                 for (const heroe of json.data.results) {
-                    let urlHeroes = heroe.urls[0].url;
-                    contentHTML += `
-                        <div class="col-md-4">
-                        <a href="${urlHeroes}" target="_blank">
-                            <img src="${heroe.thumbnail.path}.${heroe.thumbnail.extension}" alt="${heroe.name}" class="img-thumbnail">
-                        </a>
-                        <h3 class="title">${heroe.name}</h3>
-                    </div>`;
-
+                    // Para nos mostrar los que no tienen imagenes disponibles 
+                    if (heroe.thumbnail.path !== 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available') {
+                        let urlHeroes = heroe.urls[0].url;
+                        contentHTML += `
+                            <div class="col-lg-4 col-sm-6 col-xs-12 hero-container">
+                                <a href="${urlHeroes}" target="_blank" class="hero-link">
+                                    <img src="${heroe.thumbnail.path}.${heroe.thumbnail.extension}" alt="${heroe.name}" class="hero-image">
+                                </a>
+                                <h3 class="title">${heroe.name}</h3>
+                            </div>`;
+                    }
                 }
+                
                 container.innerHTML = contentHTML;
             })
     }
