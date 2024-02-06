@@ -1,8 +1,10 @@
 const marvel = {
+    limit: 15,
+    offset: 0,
 
-    render: () => {
+    render: function() {
 
-        const urlAPI = 'https://gateway.marvel.com:443/v1/public/characters?limit=100&ts=1&apikey=80f1cb6951bebf766987c60e778610ca&hash=75c47e64e26d6b36f547e4c8304a29ad';
+        const urlAPI = `https://gateway.marvel.com:443/v1/public/characters?limit=${this.limit}&offset=${this.offset}&ts=1&apikey=80f1cb6951bebf766987c60e778610ca&hash=75c47e64e26d6b36f547e4c8304a29ad`;
         const container = document.querySelector('#marvel-row');
         let contentHTML = '';
 
@@ -24,9 +26,22 @@ const marvel = {
                 }
                 
                 container.innerHTML = contentHTML;
-            })
-    }
+            });
+    },
 
+    PaginaSiguiente: function() {
+        this.offset += this.limit;
+        this.render();
+    },
+
+    PaginaAnterior: function() {
+        if (this.offset >= this.limit) { // Evita un offset negativo
+            this.offset -= this.limit;
+        }
+        this.render();
+    }
 };
 
+
 marvel.render();
+
