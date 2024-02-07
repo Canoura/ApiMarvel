@@ -1,7 +1,9 @@
 const marvel = {
-    render: () => {
-
-        const urlAPI = 'https://gateway.marvel.com:443/v1/public/comics?&limit=100&ts=1&apikey=80f1cb6951bebf766987c60e778610ca&hash=75c47e64e26d6b36f547e4c8304a29ad';
+    limit: 15,  // Indica la cantidad de elementos que van a salir por página 
+    offset: 0, // Indica el punto de inicio de la paginación, es decir, desde que heoroe va a empezarse a mostrar
+    render: function() {
+        const effectiveLimit = this.limit; // Usa el límite que se ha seleccionado para hacer la llamada a la api poniendose asi el valor de limit
+        const urlAPI =`https://gateway.marvel.com:443/v1/public/comics?limit=${effectiveLimit}&offset=${this.offset}&ts=1&apikey=80f1cb6951bebf766987c60e778610ca&hash=75c47e64e26d6b36f547e4c8304a29ad`;
         const container = document.querySelector('#marvel-row');
         let contentHTML = '';
 
@@ -22,10 +24,25 @@ const marvel = {
                 }
             }
             
-            container.innerHTML = contentHTML;
-        })
-}
+                        container.innerHTML = contentHTML;
+                    });
+            },
 
-};
+            PaginaAnterior: function () {
+                if (this.offset > 0) {
+                    this.offset -= this.limit;
+                    this.render();
+                }
+            },
 
-marvel.render();
+            PaginaSiguiente: function () {
+                this.offset += this.limit;
+                this.render();
+            },
+
+            changePageSize: function (newSize) {
+                this.limit = parseInt(newSize, 10);
+                this.offset = 0;
+                this.render();
+            }
+            }; marvel.render();
