@@ -33,11 +33,13 @@ const marvel = {
                     this.offset -= this.limit;
                     this.render();
                 }
+                window.scrollTo(0, 0);
             },
 
             PaginaSiguiente: function () {
                 this.offset += this.limit;
                 this.render();
+                window.scrollTo(0, 0);
             },
 
             changePageSize: function (newSize) {
