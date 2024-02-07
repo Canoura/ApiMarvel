@@ -52,6 +52,46 @@
       text-shadow: 3px 3px 0 #000;
 
     }
+
+     /* PAGINACION*/
+     .pagination {
+      font-family: 'Bangers', cursive;
+      text-align: center;
+      padding: 10px;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+    .pagination .btn {
+      background-color: red;
+      color: white;
+      border: none;
+      font-family: 'Bangers', cursive;
+      cursor: pointer;
+      margin: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .pagination .btn:hover {
+      background-color: darkred;
+    }
+
+    .pagination-settings,
+    .pagination-settings select {
+      background-color: red;
+      color: white;
+      font-family: 'Bangers', cursive;
+      padding: 5px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .pagination-settings label {
+      margin-right: 10px;
+      /* Margen derecho para separar del selector */
+    }
   </style>
 </head>
 
@@ -86,6 +126,22 @@
 
 
     </div>
+
+      <!-- Paginacion-->
+      <div class="pagination">
+        <button type="button" class="btn btn-danger" onclick="marvel. PaginaAnterior()">Anterior</button>
+        <div class="pagination-settings">
+          <select id="page-size-select" onchange="marvel.changePageSize(this.value)">
+            <option value="15">15</option>
+            <option value="30">30</option>
+            <option value="60">60</option>
+            <option value="100">100</option>
+          </select>
+        </div>
+        <button type="button" class="btn btn-danger" onclick="marvel.PaginaSiguiente()">Siguiente</button>
+      </div>
+
+
   </div>
 
   <!-- CREAMOS EL PIE DE PAGINA QUE TENDRÁ TODA NUESTRA WEB -->
