@@ -96,6 +96,37 @@
       margin-right: 10px;
       /* Margen derecho para separar del selector */
     }
+
+       /* buscador */
+    
+       .searchbar {
+        display: flex;
+        align-items: center;
+        background-color: darkred; 
+        padding: 10px;
+        border-radius: 50px; 
+        font-family: 'Bangers', cursive; 
+    }
+
+    .search_input {
+        width: 100%;
+        border: none;
+        padding: 5px;
+        margin-right: 10px;
+        border-radius: 50px;
+        font-size: 20px; 
+        color: white; 
+        background-color: transparent; 
+    }
+
+    .search_input::placeholder {
+        color: white; /* Color del placeholder en blanco */
+    }
+
+    .search_icon {
+        color: white;
+        cursor: pointer; 
+    }
   </style>
 </head>
 
@@ -119,16 +150,34 @@
     </div>
   </nav>
 
+
   <div class="container ">
 
     <div class="text-center mt-3 mb-3">
       <h2 class="animated-title">COMICS MARVEL SPIDERSTHEFANY</h2>
     </div>
 
+  <!-- Buscador-->
+  <div class="container h-100">
+    <div class="d-flex justify-content-center h-100">
+      <div class="searchbar">
+        <input class="search_input" type="text" id="searchInput" placeholder="Buscar héroes...">
+        <a href="" class="search_icon" id="searchIcon"><i class="fas fa-search"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div><br></div>
+      
+      <!-- Contenedor para los resultados de búsqueda -->
+      <div class="row" id="resultsContainer">
+    
+    </div>
+  
+  <div> <br> </div>
+        
 
     <div class="row" id="marvel-row">
-
-
     </div>
 
       <!-- Paginacion-->
